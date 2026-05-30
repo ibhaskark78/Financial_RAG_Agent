@@ -20,7 +20,11 @@ class Settings(BaseSettings):
     debug: bool = False
     obs_log_level: str = "INFO"
     obs_log_format: str = "json"
+    alpha_vantage_api_key: str
+    alpha_vantage_api_url: str
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
-
+    alpha_vantage_api_key: str
+    alpha_vantage_api_url: str
+    
 def get_settings()->Settings:
-return Settings()
+    return Settings()
